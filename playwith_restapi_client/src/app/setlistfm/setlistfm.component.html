@@ -1,0 +1,21 @@
+<div class="content">
+  <div class="row">
+    <input #search type="text" (change)="searchArtist(search.value)" placeholder="Search Artists"  />
+  </div>
+  <div class="row" *ngIf="artists">
+      <div class="card" *ngFor="let artist of artists.artist" (click)="searchSetlist(artist.mbid)">
+        <div class="card-body">
+          <h5 class="card-title">{{artist.name}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{artist.disambiguation}}</h6>
+          <div *ngIf="selectedArtist_mbid == artist.mbid">
+            <div class="card-header" *ngFor="let setlist of setlists.setlist" >
+            {{setlist.venue.name}}
+            <ul class="list-group list-group-flush" *ngFor="let set of setlist.sets.set">
+              <li class="list-group-item" *ngFor="let song of set.song">{{song.name}}</li>
+            </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>

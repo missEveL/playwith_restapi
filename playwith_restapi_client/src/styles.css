@@ -1,0 +1,16 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.content {
+  padding: 4rem 2rem;
+}
+
+.left-side {
+  float: left;
+  width: 25%;
+}
+
+.right-side {
+  float: right;
+  width: 75%;
+  padding: 10px;
+}

@@ -1,0 +1,14 @@
+<div class="content">
+    <div class="nav flex-column nav-pills left-side" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <span *ngFor="let navItem of navItems">
+        <a class="nav-link" [ngClass]="{'active': tab === navItem.routerLink}" (click)="switchTab(navItem.routerLink)" id="v-pills-{{navItem.routerLink}}-tab" data-toggle="pill" role="tab">{{navItem.label}}</a>
+      </span></div>
+    <div class="tab-content right-side" id="v-pills-tabContent">
+        <div *ngIf="tab === 'randgif'" id="v-pills-randgif" role="tabpanel" aria-labelledby="v-pills-randgif-tab">
+        <div><img src="{{imgURL}}"/></div>
+      </div>
+        <div *ngIf="tab === 'randsticker'" id="v-pills-randsticker" role="tabpanel" aria-labelledby="v-pills-randsticker-tab">
+            <div><img src="{{imgURL}}"/></div>
+          </div>
+    </div>
+  </div>

@@ -1,0 +1,22 @@
+<div class="content">
+  <div class="nav flex-column nav-pills left-side" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <a class="nav-link" [ngClass]="{'active': tab ==='pod'}" (click)="switchTab('pod')" id="v-pills-pod-tab" data-toggle="pill" role="tab" aria-controls="v-pills-pod" aria-selected="true">Picture of the Day</a>
+    <a class="nav-link" [ngClass]="{'active': tab ==='notif'}" (click)="switchTab('notif')" id="v-pills-notif-tab" data-toggle="pill" role="tab" aria-controls="v-pills-notif" aria-selected="false">Notifications</a>
+    <a class="nav-link" [ngClass]="{'active': tab ==='earth'}" (click)="switchTab('earth')" id="v-pills-earth-tab" data-toggle="pill" role="tab" aria-controls="v-pills-earth" aria-selected="false">Earth</a>
+  </div>
+  <div class="tab-content right-side" id="v-pills-tabContent">
+      <div class="tab-pane" [ngClass]="{'active': tab ==='pod'}" *ngIf="tab == 'pod'" id="v-pills-pod" role="tabpanel" aria-labelledby="v-pills-pod-tab">
+      <div>{{title}}</div>
+      <div><img src="{{imgURL}}"/></div>
+      <div>{{imgCaption}}</div>
+    </div>
+      <div class="tab-pane" [ngClass]="{'active': tab ==='notif'}" *ngIf="tab == 'notif'" id="v-pills-notif" role="tabpanel" aria-labelledby="v-pills-notif-tab">
+        <div *ngFor="let message of messages">
+          {{ message.messageBody }}
+        </div>
+      </div>
+      <div class="tab-pane" [ngClass]="{'active': tab ==='earth'}" *ngIf="tab == 'earth'" id="v-pills-pod" role="tabpanel" aria-labelledby="v-pills-pod-tab">
+          <div><img src="{{imgURL}}"/></div>
+        </div>
+  </div>
+</div>
